@@ -1,6 +1,7 @@
 # Canvas API for score submission
 
-For TAs easily submit scores to Canvas
+This script cover API calls which helps TAs do score submission on Canvas.
+
 Before using the script, you will need **Canvas access token**, **course ID**, **assignment ID** and **student ID**.
 
 ## Procedures
@@ -47,7 +48,7 @@ $ curl -H 'Authorization: Bearer YOUR_TOKEN' https://gatech.instructure.com/api/
 Put the student id in the score sheet. (You may need other small script to help on that)
 
 ### Prepare your score file and modify the scripts
-- Put **access token**, **course ID** and **assignment ID** in the script `score_uploader.py`
+- Put **access token**, **course ID**, **assignment ID** and **name of score sheet** in the script `score_uploader.py`
 - Prepare your score sheet in CSV format with following content:
 ```
 STUDENT_NAME,ID,SCORE
@@ -59,7 +60,7 @@ Nosus Hsu,55688,56
 With a custom score sheet file, you should change the script.
 
 - You can also send out comments at the same time 
-add a new key-value pair with key called `"comment[text_comment]": comment` in `params` value in script.
+Add a new key-value pair with key called `"comment[text_comment]"` in `params` value in script.
 
 other submission [reference](https://canvas.instructure.com/doc/api/submissions.html#method.submissions_api.update)
 
