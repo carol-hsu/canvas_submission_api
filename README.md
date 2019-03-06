@@ -4,7 +4,7 @@ For TAs easily submit scores to Canvas
 Before using the script, you will need **Canvas access token**, **course ID**, **assignment ID** and **student ID**.
 
 ## Procedures
-- Get your access token
+### Get your access token
 
 1. Go to canvas, click left side bannar and go to your account setting. 
 ![get_token_0][GetToken0]
@@ -15,11 +15,11 @@ Before using the script, you will need **Canvas access token**, **course ID**, *
 3. Copy the token, you will need it for the API calls. **Caution: do not share it to anyone or spread it in public**.
 ![get_token_2][GetToken2]
 
-- Get course id
+### Get course ID
 
 Query every course by API with your token, you can find the course id you want.
 ```
-curl -H 'Authorization: Bearer YOUR_TOKEN' https://gatech.instructure.com/api/v1/courses/
+$ curl -H 'Authorization: Bearer YOUR_TOKEN' https://gatech.instructure.com/api/v1/courses/
 ```
 
 Or, you can use [Chrome ARC](https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo?hl=zh-TW)
@@ -28,10 +28,25 @@ Or, you can use [Chrome ARC](https://chrome.google.com/webstore/detail/advanced-
 Find the course you want, the `id` in the same JSON object is the course id. Copy it, you will need it.
 ![get_course_id_1][GetCourseId1]
 
-- Get assignment id
+### Get assignment ID
 
-- Get all students' unique id
-- Prepare your score file and modify the scripts
+Similar to how you get course id, fire following command to get all assignments under that course:
+```
+$ curl -H 'Authorization: Bearer YOUR_TOKEN' https://gatech.instructure.com/api/v1/courses/COURSE_ID/assignments
+```
+Same, find the assignment you want, and record down the assignment id. 
+
+it is also workable to use Chrome ARC, but passed it here.
+
+### Get all students' unique id
+
+You would need student id for putting their scores.
+```
+$ curl -H 'Authorization: Bearer YOUR_TOKEN' https://gatech.instructure.com/api/v1/courses/COURSE_ID/students
+``` 
+Put the student id in the score sheet 
+
+### Prepare your score file and modify the scripts
 - You can also send out comments at the same time
 
 [GetToken0]: https://github.gatech.edu/khsu38/canvas_submission_api/blob/master/figs/get_token_0.png
