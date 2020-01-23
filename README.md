@@ -19,7 +19,9 @@ Before using the script, you will need **Canvas access token**, **course ID**, *
 ### Get course ID
 
 Query every course by API with your token, you can find the course id you want.
+
 ```
+//change the URL to your instructure's endpoint
 $ curl -H 'Authorization: Bearer YOUR_TOKEN' https://gatech.instructure.com/api/v1/courses/
 ```
 
@@ -64,9 +66,9 @@ Add a new key-value pair with key called `"comment[text_comment]"` in `params` v
 
 other submission [reference](https://canvas.instructure.com/doc/api/submissions.html#method.submissions_api.update)
 
-[GetToken0]: https://github.gatech.edu/khsu38/canvas_submission_api/blob/master/figs/get_token_0.png
-[GetToken1]: https://github.gatech.edu/khsu38/canvas_submission_api/blob/master/figs/get_token_1.png
-[GetToken2]: https://github.gatech.edu/khsu38/canvas_submission_api/blob/master/figs/get_token_2.png
-[GetCourseId0]: https://github.gatech.edu/khsu38/canvas_submission_api/blob/master/figs/get_course_id_0.png
-[GetCourseId1]: https://github.gatech.edu/khsu38/canvas_submission_api/blob/master/figs/get_course_id_1.png
+[GetToken0]: https://github.com/carol-hsu/canvas_submission_api/blob/master/figs/get_token_0.png
+[GetToken1]: https://github.com/carol-hsu/canvas_submission_api/blob/master/figs/get_token_1.png
+[GetToken2]: https://github.com/carol-hsu/canvas_submission_api/blob/master/figs/get_token_2.png
+[GetCourseId0]: https://github.com/carol-hsu/canvas_submission_api/blob/master/figs/get_course_id_0.png
+[GetCourseId1]: https://github.com/carol-hsu/canvas_submission_api/blob/master/figs/get_course_id_1.png
 
